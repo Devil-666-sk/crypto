@@ -4,13 +4,13 @@ const CurrentData = require('../models/CurrentData');
 const HistoryData = require('../models/HistoryData');
 const fetchCoins = require('../services/fetchCoins');
 
-// GET /api/coins
+
 router.get('/', async (req, res) => {
   const coins = await CurrentData.find({});
   res.json(coins);
 });
 
-// POST /api/history
+
 router.post('/history', async (req, res) => {
   const data = await fetchCoins();
   await HistoryData.insertMany(
@@ -19,7 +19,7 @@ router.post('/history', async (req, res) => {
   res.json({ message: 'History stored successfully' });
 });
 
-// GET /api/history/:coinId
+
 router.get('/history/:coinId', async (req, res) => {
   const { coinId } = req.params;
   const history = await HistoryData.find({ coinId }).sort({ timestamp: 1 });

@@ -59,8 +59,7 @@ const CryptoTable = () => {
                   className='hover:bg-gray-50 transition duration-200'
                 >
                   <td className='py-3 px-4 font-semibold flex items-center gap-2'>
-                    {/* Optional: Add icon if you have a coin.icon */}
-                    {/* <img src={coin.icon} alt="" className="w-5 h-5" /> */}
+                    
                     {coin.name}
                   </td>
                   <td className='py-3 px-4 uppercase text-gray-500'>

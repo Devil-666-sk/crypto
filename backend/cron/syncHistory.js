@@ -7,11 +7,11 @@ const syncHistory = () => {
   cron.schedule('0 */1 * * *', async () => {
     const data = await fetchCoins();
 
-    // Update Current Data
+    
     await CurrentData.deleteMany({});
     await CurrentData.insertMany(data);
 
-    // Insert History Data
+    
     await HistoryData.insertMany(
       data.map((coin) => ({ ...coin, timestamp: new Date() }))
     );
