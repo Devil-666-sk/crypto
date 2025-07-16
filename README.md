@@ -21,7 +21,7 @@
 - 📡 RESTful API endpoints:
   - `GET /api/coins` – current data
   - `POST /api/coins/history` – save snapshot
-  - `GET /api/coins/history/:coinId` – fetch historical data (optional)
+  - `GET /api/coins/history/:coinId` – fetch historical data 
 
 ---
 
