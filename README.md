@@ -1,33 +1,17 @@
-# crypto
+## Tech Stack Used
 
-#  Full-Stack Crypto Tracker
-
-A full-stack cryptocurrency tracker dashboard that fetches live data from the [CoinGecko API](https://www.coingecko.com/), displays it in a React frontend, stores it in MongoDB, and syncs data hourly using a Node.js cron job.
-
----
-
-##  Project Overview – VR Automations Technical Test
-
-**Test Title:** Full-Stack Crypto Tracker (MERN Stack)  
-**Deadline:** July 16, 2025  
-**Objective:** Build and deploy a MERN crypto tracking app with automation and persistence.
+| Layer      | Technology                                  |
+| ---------- | ------------------------------------------- |
+| Frontend   | React.js, Tailwind CSS                      |
+| Backend    | Node.js, Express.js                         |
+| Database   | MongoDB (via Mongoose)                      |
+| API Source | [CoinGecko API](https://www.coingecko.com/) |
+| Scheduler  | `node-cron`                                 |
+| Deployment | Render (Backend), Vercel (Frontend)         |
 
 ---
 
-##  Tech Stack Used
-
-| Layer       | Technology               |
-|-------------|--------------------------|
-| Frontend    | React.js, Tailwind CSS   |
-| Backend     | Node.js, Express.js      |
-| Database    | MongoDB (via Mongoose)   |
-| API Source  | [CoinGecko API](https://www.coingecko.com/) |
-| Scheduler   | `node-cron`              |
-| Deployment  | Render (Backend), Vercel/Netlify (Frontend) |
-
----
-
-##  Project Features
+## Project Features
 
 - 📈 Displays top 10 cryptocurrencies by market cap.
 - 🔄 Auto-refreshes every 30 minutes in frontend.
@@ -41,4 +25,37 @@ A full-stack cryptocurrency tracker dashboard that fetches live data from the [C
 
 ---
 
-# crypto
+## Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Devil-666-sk/crypto.git
+cd crypto
+npm install
+frontend - npm run dev
+backend - npm run start
+
+---
+
+##  How the Cron Job Works
+
+- `node-cron` runs every hour (`0 * * * *`)
+- It fetches the top 10 coins from CoinGecko API
+- Updates the `current` collection with the latest snapshot
+- Appends a record to the `historical` collection for tracking over time
+- Logs the sync timestamp to console (and viewable in Render logs)
+
+
+
+---
+
+
+##  Live Demo
+
+- 🔗 **Frontend (Vercel)**: [https://crypto-eight-zeta.vercel.app/]
+- 🔗 **Backend API (Render)**: [https://crypto-132j.onrender.com/api/coins]
+---
+
+
+
