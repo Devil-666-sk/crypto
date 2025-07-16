@@ -27,7 +27,7 @@
 
 ## Setup Instructions
 
-### 1. Clone the Repository
+###  Clone the Repository
 
 ```bash
 git clone https://github.com/Devil-666-sk/crypto.git
