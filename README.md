@@ -58,4 +58,91 @@ backend - npm run start
 ---
 
 
+🔹 Frontend: Vercel
+Steps:
+
+Go to https://vercel.com
+
+Click "New Project" and import the GitHub repository
+
+Choose the /frontend folder as the root
+
+Add an environment variable:
+
+VITE_API_BASE_URL=https://crypto-132j.onrender.com/api
+
+Vercel will auto-detect Vite or React and deploy the app
+
+After deployment, you'll get a public URL like:
+
+arduino
+Copy
+Edit
+https://crypto-eight-zeta.vercel.app/
+
+
+
+
+🔹 Backend: Render
+Steps:
+
+Visit https://render.com
+
+Click "New Web Service"
+
+Connect your GitHub repo and select the /backend folder
+
+Set the following Environment Variables:
+
+MONGO_URI=mongodb+srv://Shubham:1iF10kPQQyuWEIbk@cluster0.e7vlgk1.mongodb.net/
+
+PORT=5000
+
+Build command: npm install
+
+Start command: npm start
+
+After deployment, you'll get a URL like:
+
+arduino
+Copy
+Edit
+https://crypto-132j.onrender.com
+
+
+
+🔹 Database: MongoDB Atlas
+Steps:
+
+Go to https://cloud.mongodb.com
+
+Create a free cluster
+
+Create a database named crypto-db (or any name)
+
+Create two collections:
+
+current
+
+historical
+
+Whitelist your IP or allow access from anywhere (0.0.0.0/0)
+
+Copy the connection string and add to backend .env as:
+
+bash
+Copy
+Edit
+
+
+MONGO_URI=mongodb+srv://Shubham:1iF10kPQQyuWEIbk@cluster0.e7vlgk1.mongodb.net/
+
+
+🔄 Cron Job Verification
+The backend includes a node-cron job that runs every hour
+
+You can verify that it’s running by checking the Render Logs
+
+
+
 
