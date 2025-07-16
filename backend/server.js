@@ -5,12 +5,12 @@ const cors = require('cors');
 const syncHistory = require('./cron/syncHistory');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
   console.log('✅ MongoDB connected');
-  syncHistory(); // Start cron job after DB is connected
+  syncHistory();
 });
 
 app.use('/api/coins', require('./routes/coins'));
